@@ -1,0 +1,5 @@
+package com.cts.jsedemo.model;
+
+public class Employee {
+
+}

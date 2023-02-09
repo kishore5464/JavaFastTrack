@@ -1,0 +1,35 @@
+package com.cts.jsedemo;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.cts.jsedemo.model.Employee;
+
+public class App {
+
+	public static void main(String arg[]) {
+		List<Employee> emps = new ArrayList<Employee>();
+		
+		emps.add(new Employee(201, "Vamsy", 45000.0, LocalDate.of(2023, Month.JANUARY,1)));
+		emps.add(new Employee(221, "Vimala", 55000.0, LocalDate.of(2023, Month.JANUARY,3)));
+		emps.add(new Employee(301, "Vasudha", 35000.0, LocalDate.of(2023, Month.JANUARY,4)));
+		emps.add(new Employee(101, "Vanitha", 25000.0, LocalDate.of(2023, Month.JANUARY,10)));
+		emps.add(new Employee(121, "Vasu", 75000.0, LocalDate.of(2023, Month.JANUARY,7)));
+		emps.add(new Employee(111, "Vijaya", 85000.0, LocalDate.of(2023, Month.JANUARY,3)));
+		emps.add(new Employee(141, "Varun", 49000.0, LocalDate.of(2023, Month.JANUARY,6)));
+		emps.add(new Employee(102, "Vinith", 46000.0, LocalDate.of(2023, Month.JANUARY,6)));
+		emps.add(new Employee(222, "Vasim", 44000.0, LocalDate.of(2023, Month.JANUARY,10)));
+		emps.add(new Employee(105, "Venu", 55000.0, LocalDate.of(2023, Month.JANUARY,21)));
+		
+		
+		System.out.println(emps.stream().map(Employee::getFullName).collect(Collectors.toList()));
+		
+		System.out.println(emps.stream().filter( e -> e.getSalary()<50000 ).map(Employee::getFullName).collect(Collectors.toList()));
+		
+		System.out.println(emps.stream().reduce( (e1,e2) -> e1.getDateOfJoing().isBefore(e2.getDateOfJoing())?e1:e2).get());
+	}
+}

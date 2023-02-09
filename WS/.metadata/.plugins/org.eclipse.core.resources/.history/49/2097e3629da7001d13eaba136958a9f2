@@ -1,0 +1,32 @@
+package com.cts.jsedemo;
+
+import java.util.Arrays;
+
+import com.cts.jsedemo.services.SampleFunctionalInterface;
+
+public class App {
+
+	public static void main(String arg[]) {
+		
+		/*
+		SampleFunctionalInterface evenOddCheck = a -> (a%2==0);
+		
+		SampleFunctionalInterface primeCheck = a -> {
+			int count=2;
+			
+			//to count the factors of a
+			
+			return count==2;
+		};
+		
+		System.out.println(evenOddCheck.operate(12));
+		System.out.println(evenOddCheck.operate(11));
+		*/
+		
+		
+		String[] strs = new String[] {"Vamsy","Komal","Vinay","Latha","Savan","Swaroopa","Vinay"};
+		
+		Arrays.stream(strs).forEach( str -> {str = "**"+str+"**";});
+		Arrays.stream(strs).forEach(System.out::println);
+	}
+}

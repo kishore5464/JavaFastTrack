@@ -1,0 +1,5 @@
+package com.cts.jsedemo.services;
+
+public interface SampleFunctionalInterface {
+
+}
