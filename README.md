@@ -289,3 +289,16 @@ Relations
                     |- createCriteria(Criteria)
 
 
+    Assignment 2
+
+        Persist the below object map:
+
+            Subscriber      sid,name,mobile,gender,mailId,subscriptions (many),paymentMode (one),deviceDetails (composition)
+
+            Subscription    spId,channelName,rate,zonar(SPORTS|NEWS|MOVIE|GEBNERAL)
+
+            PaymentMode     payModeId,upiId,defaultPaymentApp
+
+            DeviceDetails   make,model
+
+
