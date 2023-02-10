@@ -301,4 +301,13 @@ Relations
 
             DeviceDetails   make,model
 
+    Assignment 3
 
+        Write JPQL/HQL Queries to 
+
+            1. retrive all the Subscriber records.
+            2. retrive no of subscriptions for each subscriber name
+            3. retrive susbscriber name,mogile and mailId
+            4. retrive all subscribers whose defaultPaymentApp is 'GPay'.
+            5. retrive all subscribers whose upiId ends wiht 'okhdfcbank'.
+            6. retrive number of subscribers for each channelName.
