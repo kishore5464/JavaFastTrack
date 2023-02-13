@@ -311,3 +311,134 @@ Relations
             4. retrive all subscribers whose defaultPaymentApp is 'GPay'.
             5. retrive all subscribers whose upiId ends wiht 'okhdfcbank'.
             6. retrive number of subscribers for each channelName.
+
+    Hibernate Cache
+    ----------------------------------------------------------------------------
+
+        First Level Cache
+
+            is default and autoamtically manged by the session (entity-manager) itself .
+
+            When an entity is in a 'persistence stage', it is monitored in the FL Cache.
+            Any updations or modifications made to that entity or its assosiated
+            entities is all observed and remmembered in the first-level cache.
+
+            This ultimatly updated copy of the entity is shared with the RDBMS
+            onl if the curretn txn is commited / session is evicted / session is closed.
+
+        Second Level Cache (optional)
+
+            we have many implementors in the market to provide the is
+            second level cache.
+
+            it is application level cache to facilitate cross-session
+            caching. Mostly this is employed on a collection-level
+            or a entity class level to manage data retrival performence.
+
+
+Spring Framework
+----------------------------------------------------------------------------------------------
+
+    is a framework (dev-plaform) designed to support a variaty of JavaEE solutions.
+
+    1. Very light weight and highly modular
+
+        Spring Core             basic supportive module for all other spring modules
+        Spring Bean             dependency injection via BeanFactory container
+        Spring Context          dependency injection via ApplicationContext container
+        Spring SpEL             spring expression language for external configuarations
+        Spring Boot             auto-config and rapid application development
+        Spring Data JPA         ORM on JPA (SQL databases)
+        Spring Data NoSQL       is a vast package to acive ORM on no-sql databases
+        Spring Web              support web mvc or rest api
+        Spring WebFlux          reactive spring applications
+        Spring Cloud            miscroservices
+        Spring Test             testing platform
+        Spring Security         authorization and authentication solutions
+        Spring Batch            batch processing....
+        .....etc.,
+
+    2. Interoperable
+
+
+    Dependency Injection
+
+        is a implementation fo the idea IoC (Inversion of control).
+
+        interface EmployeeDAO{
+            
+        }
+
+        class EmployeeDAOJdbcImpl  implements EmployeeDAO {
+
+        }
+
+        class EmployeeDAOJpaImpl implements EmployeeDAO {
+
+        }
+
+        interface EmployeeService{
+
+        }
+
+        class EmployeeServiceImpl implements EmployeeService {
+
+            private EmployeeDAO empDao;
+
+            public EmployeeServiceImpl(EmployeeDAO dao){
+                this.empDao = dao;
+            }
+
+            .....
+        }
+
+    Spring Bean and Spring Context
+    
+        Bean is any object whose life cycel is maanged by a container.
+
+        Component is a class of the Bean, which means that the object os the component are managed by
+        a container.
+
+        Container is a piece of software that manages the life cycle of an object of a class. And
+        such objects are called beans and such classes are called components.
+
+        Configuaration  is to inform the container how many components do we have for him to manage
+        and how are these components dependent on one another.
+
+            1. Xml Based Config
+            2. Annotation Based Config
+            3. Java Based Config.
+
+                @Component("")
+                    @Servive("")
+                    @Repository("")
+                    @Controller("")
+                    @Advice("")
+                    ....etc.,
+
+                @Scope("singleton|prototype|session|global-session")
+
+                @Value("spEL-expression")       //field injection
+
+                @Autowired                      //bean injection byType
+
+                @Autowired
+                @Qualifier("beanId")            //bean injection byName
+
+                @Configuaration
+                @ComponentScan("base-package")
+                class MyConfig {
+
+                    @Bean
+                    public Scanner kbin(){
+                        return new Scanner(System.in);
+                    }
+                }
+
+
+
+        
+
+
+
+
