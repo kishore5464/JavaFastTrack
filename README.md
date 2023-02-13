@@ -394,7 +394,7 @@ Spring Framework
 
     Spring Bean and Spring Context
     
-        Bean is any object whose life cycel is maanged by a container.
+        Bean is any object whose life cycle is maanged by a container.
 
         Component is a class of the Bean, which means that the object os the component are managed by
         a container.
@@ -434,6 +434,10 @@ Spring Framework
                         return new Scanner(System.in);
                     }
                 }
+
+        Spring Containers
+            BeanFactory             offered by spring beans module
+            ApplicationContext      offered by spring context module
 
 
 
