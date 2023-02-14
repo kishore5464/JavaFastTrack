@@ -360,7 +360,6 @@ Spring Framework
 
     2. Interoperable
 
-
     Dependency Injection
 
         is a implementation fo the idea IoC (Inversion of control).
@@ -439,9 +438,67 @@ Spring Framework
             BeanFactory             offered by spring beans module
             ApplicationContext      offered by spring context module
 
+    Spring Boot
+
+        Auto-config
+        RAD - Rapid Application Development.
+
+        auto-config works with the help of starter packages.
+
+        Creating a spring boot application
+            1. STS
+            2. Spring Boot CLI
+            3. https://start.spring.io
+
+        @SpringBootApplication  =   @Configuration + @ComponentScan + @PropertySource + @AutoConfig
+
+        SpringApplication.run(ConfigurationClass.class, args);
+            1. create an application context
+            2. executes as many spring runner as we have in our project
+            3. initiate the embeded server if any.
+            4. application context is destroyed.
+
+        Spring Runners
+            CommandLineRunner       void run(String arg[])
+            ApplicationRunner       void run(ApplicationArgs args)
+
+    Spring Data JPA
+
+        ORM automation module from spring framework.
+
+        CrudRepository
+            |
+            |- JpaRepository
+                |- findAll
+                |- findById
+                |- save
+                |- deleteById
+                |- existsById
+
+        class Employee {
+            private Long empId;
+            private String firstName;
+            private String lastName;
+            private Double basicPay;
+            private LocalDate dateOfJoining;
+            private String mailId;
+
+            //.....
+        }
+
+        interface EmployeeRepo extends JpaRepository<Employee,Long> {
+            
+            List<Employee> findAllByFirstName(String firstName);
+            boolean existsByMailId(String mailId);
+            Optional<Employee> findByMailId(String mailId);
+
+            @Query("SELECT e FROM Employee e WHERE e.dateOfJoining BETWEEN :start AND :end")
+            List<Employee> getAllJoinedBetween(LocalDate start,LocalDate end);
+        }
 
 
-        
+
+
 
 
 
