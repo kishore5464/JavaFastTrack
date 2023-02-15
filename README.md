@@ -546,6 +546,9 @@ Spring Framework
             ResponseEntity<T>       a class that encapsualtes respBody and HttpStatus
 
 
+        Assignment 5
 
+            Develop a Spring boot rest-api application to perform
+                all CRUD operations on an entity "Consumer"
 
 
