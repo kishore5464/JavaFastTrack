@@ -496,8 +496,54 @@ Spring Framework
             List<Employee> getAllJoinedBetween(LocalDate start,LocalDate end);
         }
 
+        Assignment 4
+
+            Develop a Spring boot console based application to 
+                add / list and delete an entity "Consumer"
 
 
+    Spring Rest
+
+        rest - api standards
+
+            HTTP methods mapping to the CRUD operations
+
+            Method      URL-mapping         Operation           Success Status      Failure Status
+            --------------------------------------------------------------------------------------------
+            GET         /emps               Get All Employees   OK-200              400-BAD REQUEST
+                                                                                    500-INTERNAL SERVER ERROR
+            GET         /emps/101           Get By EmployeeId   OK-200              404-NOT FOUND
+                                                                                    500-INTERNAL SERVER ERROR
+            POST        /emps               Insert              CREATED-201         400-BAD REQUEST
+                                                                                    500-INTERNAL SERVER ERROR
+            PUT         /emps               Update              ACCEPTED-202        400-BAD REQUEST
+                                                                                    500-INTERNAL SERVER ERROR  
+            DELETE      /emps/101           Delete              NO CONTENT-204      404-NOT FOUND
+                                                                                    500-INTERNAL SERVER ERROR
+
+
+        using Spring Web to develop rest-api
+
+            @RestController =   @Controller + @ResponseBody
+
+            @CrossOrigin
+
+            @RequestMapping
+                @BetMapping
+                @PostMapping
+                @PutMapping
+                @DeleteMapping
+
+            @Consume
+            @Produce
+
+            @RequestBody
+
+            @PathVariable           http://localhost:9999/emps/101 ; http://localhost:9999/emps/vamsy@gmail.com ; 
+
+            @RequestParam           http://localhost:9999/emps?name=Vamsy ; http://localhost:9999/emps?mobile=9052224775 ;
+
+            ResponseEntity<T>       a class that encapsualtes respBody and HttpStatus
 
 
 
